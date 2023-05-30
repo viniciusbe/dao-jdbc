@@ -23,10 +23,15 @@ public class Program {
 //        System.out.println("------ FIND ALL SELLERS");
         sellers = sellerDao.findAll();
 
-        System.out.println("------ SELLER INSERT");
+//        System.out.println("------ SELLER INSERT");
         Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 2500.0, dep);
         sellerDao.insert(newSeller);
 
-        System.out.println(newSeller.getId());
+        System.out.println("------ SELLER UPDATE");
+        seller = sellerDao.findById(1);
+        seller.setName("Tob");
+        sellerDao.update(seller);
+
+        System.out.println(seller);
     }
 }
