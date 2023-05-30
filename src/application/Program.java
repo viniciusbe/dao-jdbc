@@ -25,13 +25,16 @@ public class Program {
 
 //        System.out.println("------ SELLER INSERT");
         Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 2500.0, dep);
-        sellerDao.insert(newSeller);
+//        sellerDao.insert(newSeller);
 
-        System.out.println("------ SELLER UPDATE");
+//        System.out.println("------ SELLER UPDATE");
         seller = sellerDao.findById(1);
         seller.setName("Tob");
         sellerDao.update(seller);
 
-        System.out.println(seller);
+        System.out.println("------ SELLER DELETE");
+        sellerDao.deleteById(7);
+
+        System.out.println("Seller deleted");
     }
 }
